@@ -1,0 +1,37 @@
+[
+    {
+      "id": 1,
+      "name": "Do you think Trump is going to win the presidency on 2020?",
+      "image": "",
+      "optionOne": "Yes",
+      "optionTwo": "No"
+    },
+    {
+      "id": 2,
+      "name": "Do you prefer a Bernie or Biden?",
+      "image": "",
+      "optionOne": "Bernie",
+      "optionTwo": "Biden"
+    },
+    {
+      "id": 3,
+      "name": "Do you Vote?",
+      "image": "",
+      "optionOne": "Yes",
+      "optionTwo": "No"
+    },
+    {
+      "id": 4,
+      "name": "Should everyone be covered under medicare?",
+      "image": "",
+      "optionOne": "Yes",
+      "optionTwo": "No"
+    },
+    {
+      "id": 5,
+      "name": "Should we get rid of the Electoral College?",
+      "image": "",
+      "optionOne": "Yes",
+      "optionTwo": "No"
+    }
+  ]
