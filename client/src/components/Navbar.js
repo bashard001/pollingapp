@@ -14,13 +14,13 @@ function Navbar() {
         <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
     </li>
     <li className="nav-item">
-        <a className="nav-link" href="#">Finance</a>
+        <a className="nav-link" href="#">Politics</a>
     </li>
     <li className="nav-item">
         <a className="nav-link" href="#">Science</a>
     </li>
     <li className="nav-item">
-        <a className="nav-link" href="#">Business</a>
+        <a className="nav-link" href="#">Finance</a>
     </li>
     <li className="nav-item">
         <a className="nav-link" href="#">Sports</a>
@@ -32,11 +32,6 @@ function Navbar() {
         <a className="nav-link" href="#">Entertainment</a>
     </li>
     </ul>
-
-    <form class="form-inline">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Search</button>
-    </form>
 
 </div>
 </nav>
