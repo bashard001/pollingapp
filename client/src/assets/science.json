@@ -1,0 +1,37 @@
+[
+    {
+      "id": 1,
+      "name": "Do you believe the earth is round or flat?",
+      "image": "",
+      "optionOne": "Round",
+      "optionTwo": "Flat"
+    },
+    {
+      "id": 2,
+      "name": "Is pluto a planet?",
+      "image": "",
+      "optionOne": "Yes",
+      "optionTwo": "No"
+    },
+    {
+      "id": 3,
+      "name": "Do you believe the earth is orbiting the sun?",
+      "image": "",
+      "optionOne": "Yes",
+      "optionTwo": "No"
+    },
+    {
+      "id": 4,
+      "name": "Do you believe in UFOs?",
+      "image": "",
+      "optionOne": "Yes",
+      "optionTwo": "No"
+    },
+    {
+      "id": 5,
+      "name": "Should we colonize mars?",
+      "image": "",
+      "optionOne": "Yes",
+      "optionTwo": "No"
+    }
+  ]
