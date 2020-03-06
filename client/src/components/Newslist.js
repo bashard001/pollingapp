@@ -43,4 +43,3 @@ const NewsList = (props) => {
 export default NewsList;
 
 
-

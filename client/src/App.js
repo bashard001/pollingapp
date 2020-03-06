@@ -12,7 +12,7 @@ import Footer from "./components/Footer"
 import Card from "./components/Card";
 import Pollscard from "./components/Pollscard"
 import politics from "./assets/politics.json"
-import NewsList, {Newslistitem} from "./components/Newslist.js";
+import NewsList, { Newslistitem } from "./components/Newslist.js";
 
 const App = function () {
 
@@ -42,11 +42,11 @@ const App = function () {
     const getNews = (param) => {
         API.getNews(param || '').then(data => {
             console.log(data)
-            setNews(data.data.articles) 
+            setNews(data.data.articles)
         })
     }
 
-   const getHeadlines = () => {
+    const getHeadlines = () => {
         const categories = this.state.categories;
         API.getHeadlines().then(data => {
             data.data.sources.map(article => {
@@ -76,7 +76,7 @@ const App = function () {
 
     return (
         <div className="App">
-            <Navbar onClick={handleClick}/>
+            <Navbar onClick={handleClick} />
             <br />
             <br />
             {politics.map(politic => (
@@ -88,9 +88,9 @@ const App = function () {
                     handleChoice={handleChoice} />
             ))}
 
-            
-            
-            <NewsList list={news}/>
+
+
+            <NewsList list={news} />
             <div className="row">
                 <div className="col-md-4">
                     <Card imgsrc={img1} title="Tech" />
@@ -107,6 +107,27 @@ const App = function () {
     );
 }
 
+    < form class="form-inline" >
+        <button class="btn btn-primary my-2 my-sm-0 ml-auto ">Sign in</button>
+        <button class="btn btn-outline-warning mr-auto" type="submit">Continue as guest</button>
+                  </form >
+
+
+               </div >
+            </nav >
+
+    <div id="newslist">
+        <NewsList list={this.state.news} />
+    </div>
+
+
+    <Cards headlines={this.state.categories} />
+
+    <Footer></Footer>
+
+         </div >);
+   }
+}
 export default App;
 
 
