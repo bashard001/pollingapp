@@ -1,0 +1,37 @@
+[
+    {
+      "id": 1,
+      "name": "Do you prefer comedy or horror movies?",
+      "image": "",
+      "optionOne": "comedy",
+      "optionTwo": "horror"
+    },
+    {
+      "id": 2,
+      "name": "Are you goig to watch the new mission impassible movie?",
+      "image": "",
+      "optionOne": "Yes",
+      "optionTwo": "No"
+    },
+    {
+      "id": 3,
+      "name": "Do you like hiphop?",
+      "image": "",
+      "optionOne": "Yes",
+      "optionTwo": "No"
+    },
+    {
+      "id": 4,
+      "name": "Do you like baseball?",
+      "image": "",
+      "optionOne": "Yes",
+      "optionTwo": "No"
+    },
+    {
+      "id": 5,
+      "name": "do you prefer running or hiking?",
+      "image": "",
+      "optionOne": "running",
+      "optionTwo": "hiking"
+    }
+  ]
