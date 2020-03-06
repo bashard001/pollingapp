@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const Newslistitem = ({ news }) => {
+export const Newslistitem = ({ news }) => {
 
   return (<div className="news" class="container-fluid">
     {/* <div class="col-sm-12 col-md-4 col-lg-3"> */}

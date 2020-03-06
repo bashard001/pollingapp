@@ -1,5 +1,5 @@
 import mongoose from "mongoose"
-import db form "../models"
+import db from "..models/"
 
 // This file empties the Books collection and inserts the books below
 

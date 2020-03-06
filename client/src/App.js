@@ -12,14 +12,14 @@ import Footer from "./components/Footer"
 import Card from "./components/Card";
 import Pollscard from "./components/Pollscard"
 import politics from "./assets/politics.json"
-import NewsList from "./components/Newslist.js";
+import NewsList, {Newslistitem} from "./components/Newslist.js";
 
 const App = function () {
 
     const [category, setCategory] = useState("politics")
     const [header, setHeader] = useState("Header from state...")
     const [content, setContent] = useState("Content from state...")
-    const [news, setNews] = useState("news from state...")
+    const [news, setNews] = useState([])
 
 
     const handleCategoryChange = evt => {
@@ -34,10 +34,10 @@ const App = function () {
 
 
 
-    // componentDidMount = () => {
-    //     this.getNews()
-    //     // this.getHeadlines()
-    // }
+    const componentDidMount = () => {
+        getNews()
+        getHeadlines()
+    }
 
     const getNews = (param) => {
         API.getNews(param || '').then(data => {
@@ -46,16 +46,16 @@ const App = function () {
         })
     }
 
-    // getHeadlines = () => {
-    //     const categories = this.state.categories;
-    //     API.getHeadlines().then(data => {
-    //         data.data.sources.map(article => {
-    //             let cat = article.category;
-    //             categories[cat].push({ desc: article.description, url: article.url })
-    //         })
-    //         this.setState({ categories: categories })
-    //     })
-    // }
+   const getHeadlines = () => {
+        const categories = this.state.categories;
+        API.getHeadlines().then(data => {
+            data.data.sources.map(article => {
+                let cat = article.category;
+                categories[cat].push({ desc: article.description, url: article.url })
+            })
+            this.setState({ categories: categories })
+        })
+    }
 
 
     const handleClick = (e) => {
