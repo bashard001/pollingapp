@@ -1,10 +1,10 @@
 const router = require("express").Router();
-const db = require("../models");
+const Poll = require("../models/pollingawnsers");
 
-router.get("/news", (req, res) => {
-  // Use a regular expression to search titles for req.query.q
+router.get("/api/polls", (req, res) => {
+  // Use a reguaplar expression to search titles for req.query.q
   // using case insensitive match. https://docs.mongodb.com/manual/reference/operator/query/regex/index.html
-  db.News.find({
+  Poll.update({
     title: { $regex: new RegExp(req.query.q, 'i')}
   })
     .then(recipes => res.json(recipes))

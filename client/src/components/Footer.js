@@ -1,6 +1,6 @@
 import React from 'react';
 // import "./footer.css";
-import { Row } from 'react-bootstrap';
+// import { Row } from 'react-bootstrap';
 
 function Footer() {
     return (
@@ -8,8 +8,8 @@ function Footer() {
 
             <div></div>
             <div>
-                <div class="row" style={{color: "black", fontSize: "12px"}}>
-                    <div class="col-2">
+                <div className="row" style={{color: "black", fontSize: "12px"}}>
+                    <div className="col-2">
                         <ul>
                             <li><strong>TWN Membership</strong></li>
                             <li>TWN Membership Benefits</li>
@@ -17,14 +17,14 @@ function Footer() {
                             <li>Corporate Subscriptions</li>
                         </ul>
                     </div>
-                    <div class="col-2">
+                    <div className="col-2">
                         <ul>
                         <li><strong>Customer Service</strong></li>
                             <li>Customer Center</li>
                             <li>Contact Us</li>
                         </ul>
                     </div>
-                    <div class="col-2">
+                    <div className="col-2">
                         <ul>
                         <li><strong>Get Us</strong></li>
                             <li>Emails</li>
@@ -34,7 +34,7 @@ function Footer() {
                             <li>Podcasts</li>
                         </ul>
                     </div>
-                    <div class="col-2">
+                    <div className="col-2">
                         <ul>
                         <li><strong>Ads</strong></li>
                             <li>Advertise</li>
@@ -45,7 +45,7 @@ function Footer() {
                         </ul>
 
                     </div>
-                    <div class="col-2">
+                    <div className="col-2">
                         <ul>
                         <li><strong>More</strong></li>
                             <li>News Archive</li>

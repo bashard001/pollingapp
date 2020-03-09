@@ -34,9 +34,9 @@ function Navbar(props) {
                      </li>
                   </ul>
 
-                  <form class="form-inline">
-                     <button class="btn btn-primary my-2 my-sm-0 ml-auto ">Sign in</button>
-                     <button class="btn btn-outline-warning mr-auto" type="submit">Continue as guest</button>
+                  <form className="form-inline">
+                     <button className="btn btn-primary my-2 my-sm-0 ml-auto ">Sign in</button>
+                     <button className="btn btn-outline-warning mr-auto" type="submit">Continue as guest</button>
                   </form>
 
 
