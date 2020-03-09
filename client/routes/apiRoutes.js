@@ -1,7 +1,7 @@
 //created by Mathi not using it
 
 const router = require("express").Router();
-const db = require("../models");
+const db = require("../../models");
 
 router.get("/news:id", (req, res) => {
   console.log("news route##############################");

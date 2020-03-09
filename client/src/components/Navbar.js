@@ -1,46 +1,48 @@
 import React from 'react';
 import "./navbar.css";
 
-function Navbar() {
+function Navbar(props) {
     return (
 <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-<a className="navbar-brand namecss" href="#">WORLD NETWORK  </a>
-<button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span className="navbar-toggler-icon"></span>
-</button>
-<div className="collapse navbar-collapse" id="navbarNav">
-    <ul className="navbar-nav">
-    {/* <li className="nav-item active">
-        <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
-    </li> */}
-    <li className="nav-item">
-        <a className="nav-link" href="#">Finance</a>
-    </li>
-    <li className="nav-item">
-        <a className="nav-link" href="#">Science</a>
-    </li>
-    <li className="nav-item">
-        <a className="nav-link" href="#">Business</a>
-    </li>
-    <li className="nav-item">
-        <a className="nav-link" href="#">Sports</a>
-    </li>
-    <li className="nav-item">
-        <a className="nav-link" href="#">Technology</a>
-    </li>
-    <li className="nav-item">
-        <a className="nav-link" href="#">Entertainment</a>
-    </li>
-    </ul>
+               
+               <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span className="navbar-toggler-icon"></span>
+               </button>
+               <div className="collapse navbar-collapse" >
+                  <ul className="navbar-nav mr-auto" id="navigationItems">
 
-    <form class="form-inline">
-        {/* <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/> */}
-        <button class="btn btn-primary my-2 my-sm-0">Sign in</button> 
-        <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Continue as guest</button>
-    </form>
+                     <li className="nav-item">
+                        <a className="nav-link" onClick={props.handleClick} id="technology" href="#">Technology</a>
+                     </li>
+                     <li className="nav-item">
+                        <a className="nav-link" onClick={props.handleClick} id="sports" href="#">Sports</a>
+                     </li>
+                     <li className="nav-item">
+                        <a className="nav-link" onClick={props.handleClick} id="science" href="#">Science</a>
+                     </li>
+                     <li className="nav-item">
+                        <a className="nav-link" onClick={props.handleClick} id="finance" href="#">Finance</a>
+                     </li>
+                     <li className="nav-item">
+                        <a className="nav-link" onClick={props.handleClick} id="health" href="#">Health</a>
+                     </li>
+                     <li className="nav-item">
+                        <a className="nav-link" onClick={props.handleClick} id="business" href="#">Business</a>
+                     </li>
+                     <li className="nav-item">
+                        <a className="nav-link" onClick={props.handleClick} id="entertainment" href="#">Entertainment</a>
+                     </li>
+                  </ul>
 
-</div>
-</nav>
+                  <form className="form-inline">
+                     <button className="btn btn-primary my-2 my-sm-0 ml-auto ">Sign in</button>
+                     <button className="btn btn-outline-warning mr-auto" type="submit">Continue as guest</button>
+                  </form>
+
+
+               </div>
+            </nav>
+
     )
 }
 

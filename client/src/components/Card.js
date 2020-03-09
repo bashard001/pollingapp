@@ -1,6 +1,6 @@
 import React from 'react';
 import './card-style.css';
-import Navbar from "./Navbar.js";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function Card(props) {
