@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+// import db from "../../models"
 // import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "./components/Navbar.js";
@@ -8,16 +8,16 @@ import img1 from "./assets/images/linkedin.jpeg";
 import img2 from "./assets/images/politics.jpg";
 import img3 from "./assets/images/coronav.jpg";
 import Footer from "./components/Footer"
-
+import axios from "axios";
 import Card from "./components/Card";
 import Pollscard from "./components/Pollscard"
-import politics from "./assets/politics.json"
+import tech from "./assets/tech.json"
 import NewsList from "./components/Newslist";
 
 const App = function () {
 
     const [category, setCategory] = useState("politics")
-    const [header, setHeader] = useState("Header from state...")
+    const [catPoll, setCatPoll] = useState({ catPoll: [] })
     const [newsList, setNewsList] = useState({ newsList: [] })
     const [news, setNews] = useState({ news: [] })
 
@@ -29,14 +29,32 @@ const App = function () {
     const handleChoice = evt => {
         console.log(evt.target.innerHTML)
         console.log(evt.target.parentNode)
+        // axios.get("/api/polls")
+        // .then(function(res) {
+        //     console.log(res)
+        // })
+    
 
     }
 
+    const getPolls = (param) => {
 
+       return API.getPolls(param || '').then(
+           (data) => {
+               console.log(data.data.polls)
+               setCatPoll({catPoll: data.data.polls})
+               console.log(catPoll)
+           }
+       )
+        // })
+
+
+    }
     const getNews = (param) => {
         API.getNews(param || '').then(data => {
             console.log(data)
             setNews({ news: data.data.articles })
+            console.log(news)
         })
     }
 
@@ -56,7 +74,9 @@ const App = function () {
         e.preventDefault()
         console.log(e.target.id);
         getNews(`&category=${e.target.id}`)
-        setNewsList({ newsList: e.target.id })
+        setCategory(e.target.id)
+        
+         
         //ajax(id)
         //   {
         //    var url='http://newsapi.org/v2/top-headlines?country=us&category='+newsId+'&sortBy=publishedAt&apiKey=9d292aa6de19468c902a5695b2d3a89e';
@@ -69,16 +89,19 @@ const App = function () {
 
     };
     useEffect(() => {
+        
+        getPolls(category)
         getNews()
+        
 
-    }, [newsList])
+    }, [category])
 
     return (
         <div className="App">
             <Navbar handleClick={handleClick} />
             <br />
             <br />
-            {politics.map(politic => (
+            {tech.map(politic => (
                 <Pollscard id={politic.id}
                     key={politic.id}
                     name={politic.name}

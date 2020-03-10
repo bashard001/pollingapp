@@ -2,11 +2,23 @@ const mongoose = require("mongoose")
 const Schema = mongoose.Schema;
 
 const categorySchema = new Schema({
-    title: { type: String, required: true },
-    polls: [],
+    category: { type: String, required: true },
+    polls: [{
+        title: { type: String, required: true },
+        optionone: [
+            {option: {type: String, required: true},
+            votes: {type: Number}
+         }],
+        optiontwo: [
+            {option: {type: String, required: true},
+            votes: {type: Number}
+         }],
+        date: { type: Date, default: Date.now },
+        category: {type: mongoose.ObjectId}
+    }]
 }
 );
 
-const Category = mongoose.model("Category", categorySchema);
+const Categories = mongoose.model("categories", categorySchema);
 
-module.exports = Category;
+module.exports = Categories;

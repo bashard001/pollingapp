@@ -10,7 +10,7 @@ mongoose.connect(
 let category = [
 
     {
-        title: "science",
+        category: "science",
         polls: [{
             title: "Do you believe the earth is round or flat?",
             optionone: [
@@ -87,7 +87,7 @@ let category = [
             ]}]
     },
     {
-        title: "politics",
+        category: "politics",
         polls: [{
             title: "Do you prefer a PC or a MAC",
             optionone: [
@@ -164,7 +164,7 @@ let category = [
             ]}]
     },
     {
-        title: "sports",
+        category: "sports",
         polls: [{
             title: "Do you prefer watching basketball or football?",
             optionone: [
@@ -242,7 +242,7 @@ let category = [
         }]
     },
     {
-        title: "entertainmet",
+        category: "entertainmet",
         polls: [{
 
             title: "Do you prefer comedy or horror movies?",
@@ -310,7 +310,7 @@ let category = [
                 }]
             }]},
             {
-                title: "tech",
+                category: "tech",
                 polls: [{
                     title: "Do you prefer a PC or a MAC",
                     optionone: [
@@ -392,8 +392,8 @@ let category = [
 
 
 
-            db.Category.deleteMany({})
-                .then(() => db.Category.collection.insertMany(category))
+            db.Categories.deleteMany({})
+                .then(() => db.Categories.collection.insertMany(category))
                 .then(data => {
                     console.log(data.result.n + " records inserted!");
                     process.exit(0);
