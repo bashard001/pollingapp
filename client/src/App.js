@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-// import db from "../../models"
-// import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "./components/Navbar.js";
 import API from "./utils/API"
@@ -8,7 +6,6 @@ import img1 from "./assets/images/linkedin.jpeg";
 import img2 from "./assets/images/politics.jpg";
 import img3 from "./assets/images/coronav.jpg";
 import Footer from "./components/Footer"
-import axios from "axios";
 import Card from "./components/Card";
 import Pollscard from "./components/Pollscard"
 import tech from "./assets/tech.json"
@@ -29,12 +26,7 @@ const App = function () {
     const handleChoice = evt => {
         console.log(evt.target.innerHTML)
         console.log(evt.target.parentNode)
-        // axios.get("/api/polls")
-        // .then(function(res) {
-        //     console.log(res)
-        // })
-    
-
+        
     }
 
     const getPolls = (param) => {
@@ -46,9 +38,6 @@ const App = function () {
                console.log(catPoll)
            }
        )
-        // })
-
-
     }
     const getNews = (param) => {
         API.getNews(param || '').then(data => {
@@ -75,17 +64,6 @@ const App = function () {
         console.log(e.target.id);
         getNews(`&category=${e.target.id}`)
         setCategory(e.target.id)
-        
-         
-        //ajax(id)
-        //   {
-        //    var url='http://newsapi.org/v2/top-headlines?country=us&category='+newsId+'&sortBy=publishedAt&apiKey=9d292aa6de19468c902a5695b2d3a89e';
-        //   console.log(url)
-        //    var req=new Request(url);
-        //          fetch(req)
-        //         .then(response => response.json())
-        //         .then(json => this.setState({news : json.articles}));
-        //  }
 
     };
     useEffect(() => {
