@@ -1,4 +1,4 @@
-const Category = require("./category")
+const Categories = require("./category")
 const Poll = require("./pollingawnsers")
 
-module.exports = {Category, Poll};
+module.exports = {Categories, Poll};

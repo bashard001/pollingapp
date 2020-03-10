@@ -10,5 +10,8 @@ export default {
   },
   getHeadlines: function(){
     return axios.get(`http://newsapi.org/v2/sources?apiKey=9d292aa6de19468c902a5695b2d3a89e`)
+  },
+  getPolls: function(category){
+    return axios.get(`/api/polls/` + category)
   }
 };
