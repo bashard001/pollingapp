@@ -1,4 +1,5 @@
 const Categories = require("./category")
+const Polls = require("./polls")
 
 
-module.exports = Categories
+module.exports = {Categories: Categories, Polls: Polls};

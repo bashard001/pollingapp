@@ -13,5 +13,8 @@ export default {
   },
   getPolls: function(category){
     return axios.get(`/api/polls/` + category)
+  },
+  pollVote: function(params){
+    return axios.post(`/api/vote` , {...params})
   }
 };
