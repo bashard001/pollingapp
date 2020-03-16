@@ -16,5 +16,15 @@ export default {
   },
   pollVote: function(params){
     return axios.post(`/api/vote` , {...params})
+  },
+  logIn: function(params){
+    return axios.post('/api/login', {...params})
+  },
+  signUp: function(params){
+    return axios.post('/api/signup', {...params})
+  },
+  logOut: function(){
+    return axios.get('/api/logout')
+    
   }
 };
