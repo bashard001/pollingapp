@@ -8,34 +8,51 @@ import img3 from "./assets/images/coronav.jpg";
 import Footer from "./components/Footer"
 import Card from "./components/Card";
 import Pollscard from "./components/Pollscard"
-import tech from "./assets/tech.json"
+
 import NewsList from "./components/Newslist";
 
 const App = function () {
 
     const [category, setCategory] = useState("politics")
-    const [catPoll, setCatPoll] = useState({ catPoll: [] })
+    const [catPoll, setCatPoll] = useState([])
     const [newsList, setNewsList] = useState({ newsList: [] })
     const [news, setNews] = useState({ news: [] })
+    const [queId, setQueId] = useState({body: []})
 
+    const handleChoice = (evt) => {
 
+        var identi = [{voteid: evt.target.id}, {queid: evt.target.parentNode.id}]
+         setQueId({body: identi }) 
+        console.log(queId)
+        
+    
+        
+    }
+
+    useEffect(() => {
+        upDate(queId)
+
+    },[queId])
+
+    const upDate = (param) => {
+
+    
+        API.pollVote(param).then(data => {
+            console.log("hello" + data)
+        })
+    }
     const handleCategoryChange = evt => {
         setCategory(evt.target.value)
     }
 
-    const handleChoice = evt => {
-        console.log(evt.target.innerHTML)
-        console.log(evt.target.parentNode)
-        
-    }
 
     const getPolls = (param) => {
 
-       return API.getPolls(param || '').then(
+       return API.getPolls(param || 'science').then(
            (data) => {
-               console.log(data.data.polls)
-               setCatPoll({catPoll: data.data.polls})
-               console.log(catPoll)
+               console.log("data" + data)
+               setCatPoll(data.data.polls)
+               
            }
        )
     }
@@ -70,6 +87,7 @@ const App = function () {
         
         getPolls(category)
         getNews()
+        console.log("catagodskg" + category)
         
 
     }, [category])
@@ -79,14 +97,17 @@ const App = function () {
             <Navbar handleClick={handleClick} />
             <br />
             <br />
-            {tech.map(politic => (
-                <Pollscard id={politic.id}
-                    key={politic.id}
-                    name={politic.name}
-                    optionOne={politic.optionOne}
-                    optionTwo={politic.optionTwo}
+            { console.log("!!! " + catPoll)}
+            {catPoll && catPoll.length > 0 && catPoll.map(poll => (
+                <Pollscard 
+                    id={poll._id}
+                    key={poll._id}
+                    name={poll.title}
+                    optionOne={poll.optionone.option}
+                    optionTwo={poll.optiontwo.option}
                     handleChoice={handleChoice} />
-            ))}
+            ))
+            }
 
 
             <NewsList list={news} />
