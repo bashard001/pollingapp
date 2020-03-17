@@ -2,6 +2,9 @@ const router = require("express").Router();
 const pollsController = require("../controllers/pollController")
 const db = require("../models")
 const passport = require('../passport')
+const { exec } = require("child_process");
+const seedDb = require('../scripts/category.js');
+
 
 router.get("/polls/:category", (req, res) => {
   console.log('route hit')
@@ -126,5 +129,15 @@ router.get('/logout', function(req,res){
 	///res.redirect('/'); //Can fire before session is destroyed?
 
 })
+
+router.get('/setup/db', (req, res) => {
+try {
+  seedDb();
+  res.sendStatus(200);
+}
+catch(err){
+  res.json(err);
+}
+});
 
 module.exports = router;

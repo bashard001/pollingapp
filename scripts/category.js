@@ -2,7 +2,7 @@ const mongoose = require("mongoose")
 const db = require("../models")
 
 // This file empties the Books collection and inserts the books below
-
+function seedDB(){
 mongoose.connect(
     process.env.MONGODB_URI || "mongodb://localhost/pollingapp"
 );
@@ -818,5 +818,8 @@ db.Polls.deleteMany({})
         process.exit(0);
     }
     )
+};
+
+module.exports = seedDB;
 
 
